@@ -13,6 +13,6 @@ print('-'*40)
 
 # Since we use the same seed, these 10 numbers will always be the same when the program is run
 
-random.seed(1)
+random.seed(0)
 for x in range(10):
     print(random.random())
