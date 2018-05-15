@@ -12,7 +12,22 @@ for x in range(10):
 print('-'*40)
 
 # Since we use the same seed, these 10 numbers will always be the same when the program is run
-
+'''
 random.seed(0)
 for x in range(10):
     print(random.random())
+
+'''
+
+miss = 0
+hit = 0
+for x in range(1000000000):
+    y = random.random()
+    if y < 0.5:
+        hit += 1
+    else:
+        miss += 1
+
+print("Hit: {}\n"
+      "Miss: {}".format(hit, miss))
+
