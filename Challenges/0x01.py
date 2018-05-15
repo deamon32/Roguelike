@@ -62,11 +62,12 @@ def simulation(cowboys_aliens_tupple):
     number_of_rounds = 0  # Initializes number of rounds variable
     cowboys_alive = cowboys_aliens_tupple[0]  # Initializes variable from user input
     aliens_alive = cowboys_aliens_tupple[1]  # Initializes variable from user input
+    cowboy_health = CONST_COWBOY_HEALTH  # Initializes the cowboy_health variable
+    alien_health = CONST_ALIEN_HEALTH  # Initializes the alien_health variable
 
     # Main loop until either cowboys or aliense alive are 0
     while cowboys_alive > 0 and aliens_alive > 0:
-        cowboy_health = CONST_COWBOY_HEALTH  # Initializes the cowboy_health variable
-        alien_health = CONST_ALIEN_HEALTH  # Initializes the alien_health variable
+
 
         # Loop until either cowboy_health or alien_health drops to 0 or below, signaling that unit has died
         # When unit dies it needs to be removed from the alive variable for the specific unit, it may be possible that
@@ -81,8 +82,10 @@ def simulation(cowboys_aliens_tupple):
 
         if cowboy_health <= 0:  # Check if cowboy died and reduce alive cowboys by one
             cowboys_alive -= 1
+            cowboy_health = CONST_COWBOY_HEALTH
         if alien_health <= 0:  # Check if alien died and reduce alive aliens by one
             aliens_alive -= 1
+            alien_health = CONST_ALIEN_HEALTH
 
     #  Determines the winner, or if the game ended in a draw
     if cowboys_alive > 0:
